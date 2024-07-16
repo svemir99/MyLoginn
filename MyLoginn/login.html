@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            max-width: 400px;
+            background-color: #FBFBFB;
+            margin: auto;
+        }
+
+        #C4 {
+            display: flex;
+            align-items: center;
+            height: 35px;
+            font-weight: bold;
+        }
+
+        .C {
+            background-color: black;
+            font-size: 30px;
+            color: white;
+            padding: 1px;
+            height: 35px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        #four {
+            background-color: darkorange;
+            font-size: 30px;
+            color: black;
+            padding: 1px;
+            height: 35px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .portal {
+            color: black;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        .login-container {
+            text-align: center; 
+            margin-top: 20px; 
+        }
+
+        .login-text {
+            font-size: 24px;
+            color: black; 
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 16px;
+            color: gray; 
+            margin-top: 5px;
+           
+        }
+
+
+        .form-group {
+            margin-top: 20px;
+        }
+
+
+            
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-button {
+            background-color: orange; 
+            color: white; 
+            padding: 10px 15px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            margin-top: 10px; 
+            width: 100%; 
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .left-link, .right-link {
+            font-size: 14px;
+            color: blue;
+            text-decoration: none;
+        }
+
+
+         .left-link:hover, .right-link:hover 
+         {
+                text-decoration: underline;
+         }
+
+           
+
+
+
+        .separator {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+
+        .separator .line 
+        {
+                flex-grow: 1;
+                height: 1px;
+                background-color: #ccc;
+        }
+
+
+
+        .separator .text 
+        {
+                margin: 0 10px;
+                font-size: 14px;
+                color: gray;
+        }
+
+         
+
+          
+
+        .continue-google {
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+
+        .continue-google a {
+                font-size: 14px;
+                color: blue;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid white;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: white;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 30px;
+        }
+
+
+
+
+        .continue-google a:hover {
+                text-decoration: underline;
+        }
+
+
+
+        .continue-google img {
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+               
+        }
+
+           
+   
+    </style>
+
+
+
+    <script>
+        function submitLogin() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            window.chrome.webview.postMessage({ type: 'login', email: email, password: password });
+        }
+    </script>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div id="C4">
+            <div class="C">C</div>
+            <div id="four">4</div>
+            <div class="portal">Portal</div>
+        </div>
+
+
+
+
+        <div class="login-container">
+            <div class="login-text">Log in</div> 
+            <div class="description">Enter your local emaill and password to log in to C4 Portal. If you are not registered yet,create an account.</div> 
+            <hr class="divider"> 
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Local email" class="input-field" required>
+            <input type="password" id="password" placeholder="Password" class="input-field" required>
+            <label><input type="checkbox"> Show Password</label>
+        </div>
+
+        <button class="login-button" onclick="submitLogin()">Log in</button>
+
+
+
+
+
+        <div class="links">
+            <a href="#" class="left-link">Create account</a>
+            <a href="#" class="right-link">Forgot password</a>
+        </div>
+
+
+
+
+
+
+        <div class="separator">
+            <div class="line"></div>
+            <div class="text">or</div>
+            <div class="line"></div>
+        </div>
+
+
+
+
+
+
+        <div class="continue-google">
+            <a href="https://www.example.com" target="_blank">
+                <img src="google.jpg" alt="Google Logo" style="width: 30px; height: 30px; vertical-align: middle;" />
+                Continue with Google
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
